@@ -34,6 +34,10 @@ h3 {
   line-height: 1.2;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -76,6 +80,7 @@ img {
 .header {
   border-bottom: 1px solid #e7e9fc;
 }
+
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -105,10 +110,26 @@ img {
 }
 
 .header-nav-menu-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #2e2f42;
   padding-top: 24px;
-  padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.studio-underlining {
+  color: #404bbf;
+  gap: 20px;
+}
+
+.studio-underlining::after {
+  width: 48px;
+  height: 4px;
+  content: "";
+  border-radius: 2px;
+  background: #404bbf;
 }
 
 .header-nav-menu-link:hover,
@@ -130,6 +151,7 @@ img {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-menu-item-link:hover,
@@ -140,7 +162,15 @@ img {
 /* Main Top */
 
 .main-top {
-  background-color: #2e2f42;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/peopleoffice.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-top.section {
@@ -174,7 +204,8 @@ img {
   height: 56px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-top-button:hover,
@@ -243,7 +274,15 @@ img {
   background-color: #fff;
   width: calc((100% - 3 * 24px) / 4);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
+
+.main-our-team-item:hover .our-team-icon-box {
+  background-color: #404bbf;
+}
+
 .main-our-team-card-content {
   padding: 32px 0;
 }
@@ -272,7 +311,9 @@ img {
   background-color: #4d5ae5;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .our-team-icon {
   fill: #f4f4fd;
 }
@@ -291,6 +332,13 @@ img {
 
 .main-our-portfolio-item {
   width: calc((100% - 2 * 24px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-our-portfolio-item:hover {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .card-content {
@@ -341,4 +389,9 @@ img {
 
 .footer .social-link-list {
   gap: 16px;
+}
+
+.footer .our-team-icon-link:hover .our-team-icon-box,
+.footer .our-team-icon-link:focus .our-team-icon-box {
+  background-color: #31d0aa;
 }
